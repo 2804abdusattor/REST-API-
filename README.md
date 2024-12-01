@@ -21,7 +21,6 @@
 
 Для автоматизации тестирования был создан файл с тестами в **Laravel**, который проверяет функциональность API. Например, для создания записи я написал следующий тест:
 
-php
 use Tests\TestCase;
 
 class NotebookTest extends TestCase
@@ -39,7 +38,6 @@ class NotebookTest extends TestCase
             'phone' => '1234567890',
             'email' => 'john@example.com',
         ]);
-
         // Проверка ответа: статус 201 и структура JSON
         $response->assertStatus(201)
                  ->assertJsonStructure([
