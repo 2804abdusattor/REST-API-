@@ -1,3 +1,4 @@
+```markdown
 # Тестирование проекта
 
 ## Как я тестировал результат работы
@@ -21,6 +22,7 @@
 
 Для автоматизации тестирования был создан файл с тестами в **Laravel**, который проверяет функциональность API. Например, для создания записи я написал следующий тест:
 
+```php
 use Tests\TestCase;
 
 class NotebookTest extends TestCase
@@ -38,6 +40,7 @@ class NotebookTest extends TestCase
             'phone' => '1234567890',
             'email' => 'john@example.com',
         ]);
+
         // Проверка ответа: статус 201 и структура JSON
         $response->assertStatus(201)
                  ->assertJsonStructure([
@@ -45,6 +48,7 @@ class NotebookTest extends TestCase
                  ]);
     }
 }
+```
 
 В этом тесте:
 - Отправляется **POST**-запрос для создания новой записи.
@@ -56,10 +60,12 @@ class NotebookTest extends TestCase
 
 Для выполнения автоматических тестов использую команду:
 
+```bash
 php artisan test
+```
 
 Эта команда запускает все тесты в проекте, включая те, что находятся в папке `tests/Feature/`, и выводит результаты выполнения тестов в консоль.
-
+```
 
 ### Объяснение Markdown:
 
@@ -74,3 +80,4 @@ php artisan test
 git add README.md
 git commit -m "Добавлена информация о тестировании проекта"
 git push origin main
+```
